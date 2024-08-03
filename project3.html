@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color:   #e2eeff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.quote-container {
+    background-color:#f6d9d5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#generate-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#generate-btn:hover {
+    background-color: #0056b3;
+}
+ </style>
+
+<body>
+
+ <div class="container">
+        <h1> Quote Generator</h1>
+        <div class="quote-container">
+            <p id="quote"></p>
+        </div>
+        <button id="generate-btn">Generate Quote</button>
+    </div>
+    <script src="script.js"></script>
+
+    <script> 
+
+ 
+const quotes = [
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "Innovation distinguishes between a leader and a follower. - Steve Jobs",
+    "Stay hungry, stay foolish. - Steve Jobs",
+    "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+    "Design is not just what it looks like and feels like. Design is how it works. - Steve Jobs",
+    "The only thing worse than being blind is having sight but no vision. - Helen Keller",
+    "Life is what happens when you're busy making other plans. - John Lennon",
+    "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln",
+    "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+    "The only true wisdom is in knowing you know nothing. - Socrates"
+];
+
+
+function generateQuote() {
+    const index = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[index];
+    document.getElementById("quote").textContent = quote;
+}
+
+
+document.getElementById("generate-btn").addEventListener("click", generateQuote);
+
+
+generateQuote();
+</script>
+
+
+
+
+
+</body>
+</html>
